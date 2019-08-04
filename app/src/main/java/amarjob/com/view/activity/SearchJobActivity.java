@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,9 +15,9 @@ import java.util.List;
 
 import amarjob.com.R;
 import amarjob.com.databinding.ActivitySearchJobBinding;
-import amarjob.com.otherClasses.District;
-import amarjob.com.otherClasses.JobCategory;
-import amarjob.com.otherClasses.JobTitle;
+import amarjob.com.model.District;
+import amarjob.com.model.JobCategory;
+import amarjob.com.model.JobTitle;
 import amarjob.com.viewmodel.SearchJobViewModel;
 
 public class SearchJobActivity extends AppCompatActivity {
@@ -30,6 +31,13 @@ public class SearchJobActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_search_job);
+
+        binding.userProfileImageID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SearchJobActivity.this,SignInActivity.class));
+            }
+        });
 
 
         init();

@@ -1,4 +1,4 @@
-package amarjob.com.otherClasses;
+package amarjob.com.model;
 
 public class JobCategory {
     private String catId;

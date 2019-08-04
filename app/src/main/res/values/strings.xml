@@ -4,4 +4,10 @@
     <string name="search_jobs_in_a_smart_way_and_keep_yourself_updated">Search the best jobs in a smart way and keep yourself updated.</string>
     <string name="job_searching_is_easier_than_never_before_search_your_desired_jobs_and_stay_forward_with_your_career">Job searching is easier than never before. Search your desired jobs and stay forward with your career.</string>
     <string name="skip">Skip</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+
+
+    <string name="FACEBOOK_APP_ID">353657645549228</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">7c958c47d37ef8079932d517c4249793</string>
+
 </resources>

@@ -8,9 +8,10 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
-import amarjob.com.otherClasses.District;
-import amarjob.com.otherClasses.JobCategory;
-import amarjob.com.otherClasses.JobTitle;
+import amarjob.com.model.District;
+import amarjob.com.model.JobCategory;
+import amarjob.com.model.JobTitle;
+import amarjob.com.model.User;
 import amarjob.com.repository.SearchJobRepo;
 
 public class SearchJobViewModel extends AndroidViewModel {
@@ -30,4 +31,14 @@ public class SearchJobViewModel extends AndroidViewModel {
     public MutableLiveData<List<JobCategory>> getCategory() {
         return searchJobRepo.getCategory();
     }
+    public MutableLiveData<User> checkUser(String mobileNumber){
+        return searchJobRepo.checkUser(mobileNumber);
+    }
+    public MutableLiveData<Integer> saveUserStatus(long createdDate, boolean isVerified) {
+        return searchJobRepo.saveUserStatus(createdDate, isVerified);
+    }
+    public MutableLiveData<String> updateToken(String tokenId){
+        return searchJobRepo.updateToken(tokenId);
+    }
+
 }
