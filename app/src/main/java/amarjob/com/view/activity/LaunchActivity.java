@@ -167,26 +167,16 @@ public class LaunchActivity extends AppCompatActivity {
 
         prefManager.setFirstTimeLaunch(false);
 
-        startActivity(new Intent(LaunchActivity.this,SearchJobActivity.class));
 
 
-
-      /*  if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
-            startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
-            overridePendingTransition(R.anim.stay, R.anim.stay);
+        if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
+            startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
             finish();
-        }
-            else{
-            startActivity(new Intent(LaunchActivity.this, SplashActivity.class));
-            overridePendingTransition(R.anim.stay, R.anim.stay);
+        } else{
+            startActivity(new Intent(LaunchActivity.this, UpdateProfileActivity.class));
             finish();
 
         }
-
-*/
-       /* startActivity(new Intent(LaunchActivity.this, MainActivity.class));
-        overridePendingTransition( R.anim.slide_in_left, R.anim.stay );
-        finish();*/
     }
 
     /**
