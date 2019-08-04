@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.activity.SplashActivity">
+
+        <ImageView
+
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_team"/>
+        <TextView
+            android:layout_marginTop="@dimen/margin_large"
+            android:textSize="@dimen/margin_large_extra"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/logo"
+            android:layout_centerInParent="true"
+            android:text="Amarjob.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/reveal"
+            android:visibility="invisible"
+            android:background="@color/white"/>
+
+
+    </RelativeLayout>
+</layout>

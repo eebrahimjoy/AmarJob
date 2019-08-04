@@ -10,4 +10,7 @@
     <string name="FACEBOOK_APP_ID">353657645549228</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">7c958c47d37ef8079932d517c4249793</string>
 
+    <string name="map_api_key">AIzaSyCVlqbIvqgZdSY-yA7dv4DqZatRjqr-lQQ</string>
+    <string name="place_api_key">AIzaSyB9MxxJBmzLHdfsMEZSdV0vORR_MRwirPI</string>
+
 </resources>

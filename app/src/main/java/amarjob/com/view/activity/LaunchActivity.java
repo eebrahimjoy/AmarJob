@@ -164,16 +164,15 @@ public class LaunchActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-
         prefManager.setFirstTimeLaunch(false);
-
-
-
         if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
-            startActivity(new Intent(LaunchActivity.this, SignInActivity.class));
+            startActivity(new Intent(LaunchActivity.this, SearchJobActivity.class));
+            overridePendingTransition(R.anim.stay, R.anim.stay);
             finish();
-        } else{
-            startActivity(new Intent(LaunchActivity.this, UpdateProfileActivity.class));
+        }
+        else{
+            startActivity(new Intent(LaunchActivity.this, SplashActivity.class));
+            overridePendingTransition(R.anim.stay, R.anim.stay);
             finish();
 
         }

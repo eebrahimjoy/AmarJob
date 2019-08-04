@@ -3,7 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="amarjob.com">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,9 +18,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.UpdateProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <activity android:name=".view.activity.HomeActivity"></activity>
+        <activity
+            android:name=".view.activity.PickLocationMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc" />
+        <activity
+            android:name=".view.activity.UpdateProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc" />
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
 
         <meta-data
             android:name="com.facebook.accountkit.ApplicationName"
@@ -34,7 +54,7 @@
         <activity
             android:name=".view.activity.SignInActivity"
             android:label="@string/title_activity_sign_in"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/NoActionBarAc" />
         <activity
             android:name=".view.activity.SearchJobActivity"
             android:theme="@style/NoActionBarAc" />
@@ -49,6 +69,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="amarjob.com.userprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

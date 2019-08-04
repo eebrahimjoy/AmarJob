@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/map_color"
+        android:orientation="vertical"
+        tools:context=".Activity.PickLocationMapActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <FrameLayout
+                android:id="@+id/frameContainerID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
+
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:onClick="back"
+                android:paddingLeft="7dp"
+                android:paddingTop="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                map:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:layout_toLeftOf="@+id/searchBtnIV"
+                        android:orientation="vertical">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/pickLocationATVID"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:drawableLeft="@drawable/location_icon"
+                            android:drawablePadding="10dp"
+                            android:drawableTint="@color/black"
+                            android:elevation="5dp"
+                            android:enabled="false"
+                            android:hint="Search location"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBarId"
+                            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_below="@+id/pickLocationATVID"
+                            android:indeterminate="true"
+                            android:visibility="gone"
+                            android:indeterminateTint="@color/white"
+                            android:scaleY="4" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/searchBtnIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="searchBtnTap"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="@color/white" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:id="@+id/currentLocationImageViewID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingBottom="40dp"
+                android:src="@drawable/pick_icon" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/myLocationFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:onClick="MyLocationBtnTap"
+                android:src="@drawable/ic_my_location_black_24dp"
+                android:tint="@color/white"
+                app:fabSize="mini" />
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="2dp">
+
+            <Button
+                android:id="@+id/doneBtnID"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/backgroud_disable"
+                android:elevation="3dp"
+                android:onClick="onDoneBtnClick"
+                android:text="Done"
+                android:enabled="false"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large" />
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</layout>

@@ -8,19 +8,34 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
+import amarjob.com.Interface.ProfileInterface;
 import amarjob.com.model.District;
 import amarjob.com.model.JobCategory;
 import amarjob.com.model.JobTitle;
 import amarjob.com.model.User;
 import amarjob.com.repository.SearchJobRepo;
 
-public class SearchJobViewModel extends AndroidViewModel {
+public class SearchJobViewModel extends AndroidViewModel  implements ProfileInterface {
     SearchJobRepo searchJobRepo;
 
     public SearchJobViewModel(@NonNull Application application) {
         super(application);
         searchJobRepo = new SearchJobRepo(application);
     }
+    @Override
+    public MutableLiveData<Integer> updateProfile(User lawyer) {
+        return searchJobRepo.updateProfile(lawyer);
+    }
+
+    @Override
+    public MutableLiveData<User> getGeneralInfo() {
+        return searchJobRepo.getGeneralInfo();
+    }
+
+    public MutableLiveData<String> saveImage(byte[] byteImage) {
+        return searchJobRepo.saveImage(byteImage);
+    }
+
     public MutableLiveData<List<JobTitle>> getJobTitle() {
         return searchJobRepo.getJobTitle();
     }
@@ -40,5 +55,6 @@ public class SearchJobViewModel extends AndroidViewModel {
     public MutableLiveData<String> updateToken(String tokenId){
         return searchJobRepo.updateToken(tokenId);
     }
+
 
 }

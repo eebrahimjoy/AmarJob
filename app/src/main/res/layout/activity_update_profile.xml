@@ -28,7 +28,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:onClick="back"
                     android:paddingTop="10dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="10dp"
@@ -47,10 +46,10 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/regTextTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:padding="15dp"
+                android:padding="5dp"
                 android:text="Registration"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/margin_large_extra" />
@@ -58,164 +57,391 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/informationLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/regTextLV"
-            android:orientation="vertical">
-
-            <TextView
+            <RelativeLayout
+                android:layout_below="@+id/regTextLV"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="Choose your relevant type"
-                android:textColor="@color/black" />
-
-            <LinearLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
+                android:layout_height="match_parent">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
 
 
-                    <LinearLayout
+                    <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true">
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/imageCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/userProfileImageID"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/person_icon"
+                                        app:civ_border_color="@color/colorAccent">
+
+                                    </de.hdodenhof.circleimageview.CircleImageView>
 
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/functionalCatIV"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:src="@drawable/person_icon"
-                                app:civ_border_color="@color/black"
-                                app:civ_border_overlay="true"
-                                app:civ_border_width="1dp" />
+                                    <RelativeLayout
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="-26dp"
+                                        android:gravity="center"
+                                        android:padding="1dp">
 
+                                        <ImageView
+                                            android:layout_width="24dp"
+                                            android:layout_height="24dp"
+                                            android:src="@drawable/ic_menu_camera" />
+                                    </RelativeLayout>
 
-                            <LinearLayout
-                                android:id="@+id/infoLayoutID"
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:id="@+id/profileErrorTV"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="5dp"
-                                android:layout_toRightOf="@+id/functionalCatIV"
-                                android:orientation="vertical">
-
-
-                                <TextView
-                                    android:id="@+id/serviceTypeTV"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_marginTop="5dp"
-                                    android:maxLines="2"
-                                    android:text="Functional Category"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/text_size_large"
-                                    android:textStyle="bold" />
-
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height=".5dp"
-                            android:background="@color/gray_light" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/specialSkillCatIV"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:src="@drawable/person_icon"
-                                app:civ_border_color="@color/black"
-                                app:civ_border_overlay="true"
-                                app:civ_border_width="1dp" />
+                                android:layout_marginTop="-15dp"
+                                android:gravity="center"
+                                android:text="Please select profile image"
+                                android:textColor="@color/red"
+                                android:visibility="gone" />
 
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="5dp"
-                                android:layout_toRightOf="@+id/specialSkillCatIV"
-                                android:orientation="vertical">
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
 
 
-                                <TextView
-                                    android:id="@+id/specialSkillCatTV"
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/nameTIL"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_marginTop="5dp"
-                                    android:maxLines="2"
-                                    android:text="Special Skilled Category"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/text_size_large"
-                                    android:textStyle="bold" />
+                                    android:layout_weight="1"
+                                    android:descendantFocusability="beforeDescendants"
+                                    android:focusableInTouchMode="true"
+                                    android:hint="Name"
+                                    app:boxCornerRadiusBottomEnd="@dimen/radius"
+                                    app:boxCornerRadiusBottomStart="@dimen/radius"
+                                    app:boxCornerRadiusTopEnd="@dimen/radius"
+                                    app:boxCornerRadiusTopStart="@dimen/radius">
+
+                                    <EditText
+                                        android:id="@+id/nameET"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="textCapWords"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/text_size_medium" />
+                                </com.google.android.material.textfield.TextInputLayout>
 
 
                             </LinearLayout>
 
-                        </RelativeLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:hint="E-mail"
+                                app:boxCornerRadiusBottomEnd="@dimen/radius"
+                                app:boxCornerRadiusBottomStart="@dimen/radius"
+                                app:boxCornerRadiusTopEnd="@dimen/radius"
+                                app:boxCornerRadiusTopStart="@dimen/radius">
+
+                                <EditText
+                                    android:id="@+id/emailET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/text_size_medium" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_medium"
+                                android:hint="National Id (Optional)"
+                                app:boxCornerRadiusBottomEnd="@dimen/radius"
+                                app:boxCornerRadiusBottomStart="@dimen/radius"
+                                app:boxCornerRadiusTopEnd="@dimen/radius"
+                                app:boxCornerRadiusTopStart="@dimen/radius">
+
+                                <EditText
+                                    android:id="@+id/nationalIDET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="17"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/text_size_medium" />
+                            </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height=".5dp"
-                            android:background="@color/gray_light" />
-                    </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical">
 
-                </androidx.cardview.widget.CardView>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_medium"
+                                    android:background="@drawable/button_background"
+                                    android:orientation="horizontal">
 
-            </LinearLayout>
+                                    <TextView
+                                        android:id="@+id/addressTV"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:drawableLeft="@drawable/location_icon"
+                                        android:drawablePadding="@dimen/padding_small"
+                                        android:drawableTint="@color/white"
+                                        android:gravity="center"
+                                        android:maxLines="1"
+                                        android:padding="7dp"
+                                        android:text="Select Address"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size_medium" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/white"></View>
 
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
+                                    <ImageButton
+                                        android:id="@+id/myCurrentLocationIV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/button_background"
+                                        android:paddingLeft="7dp"
+                                        android:paddingTop="4dp"
+                                        android:paddingRight="7dp"
+                                        android:paddingBottom="4dp"
+                                        android:src="@drawable/ic_my_location_24dp" />
 
-        </LinearLayout>
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:id="@+id/addressErrorTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="Please select address"
+                                    android:textColor="@color/red"
+                                    android:visibility="gone" />
+
+
+                                <TextView
+                                    android:id="@+id/dateOfBirthTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_large"
+                                    android:background="@drawable/button_background"
+                                    android:drawableLeft="@drawable/calender_icon"
+                                    android:drawablePadding="@dimen/padding_small"
+                                    android:drawableTint="@color/white"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="7dp"
+                                    android:paddingTop="7dp"
+                                    android:paddingRight="20dp"
+                                    android:paddingBottom="7dp"
+                                    android:text="Select Date of Birth"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_medium" />
+
+                                <TextView
+                                    android:id="@+id/genderTV"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_large"
+                                    android:background="@drawable/button_background"
+                                    android:drawableLeft="@drawable/gender_icon"
+                                    android:drawablePadding="@dimen/padding_small"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="7dp"
+                                    android:paddingTop="7dp"
+                                    android:paddingRight="20dp"
+                                    android:paddingBottom="7dp"
+                                    android:text="Select Gender"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_medium" />
+
+                                <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_medium"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioGroup
+                                    android:id="@+id/genderRadioGroupID"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/maleRBID"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="@dimen/margin_medium"
+                                        android:text="Male"
+                                        android:textSize="@dimen/text_size_medium" />
+
+                                    <RadioButton
+                                        android:id="@+id/femaleRBID"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_medium"
+                                        android:text="Female"
+                                        android:textSize="@dimen/text_size_medium" />
+                                </RadioGroup>
+                            </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_large"
+                                    android:background="@drawable/button_background"
+                                    android:drawableTint="@color/white"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="7dp"
+                                    android:paddingTop="7dp"
+                                    android:paddingRight="20dp"
+                                    android:paddingBottom="7dp"
+                                    android:text="Please choose your relevant type "
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_medium"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+
+
+                                    <RadioGroup
+                                        android:id="@+id/jobCatRBID"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/functionalCatIV"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="@dimen/margin_medium"
+                                            android:text="Functional Category"
+                                            android:textSize="@dimen/text_size_medium" />
+
+                                        <RadioButton
+                                            android:id="@+id/specialSkillRBID"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/margin_medium"
+                                            android:text="Special Skilled Category"
+                                            android:textSize="@dimen/text_size_medium" />
+                                    </RadioGroup>
+
+
+                                    <ProgressBar
+                                        android:id="@+id/progressBar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_large"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:background="@drawable/button_background"
+                                android:id="@+id/updateProfileBtn"
+                                android:text="Update"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_medium" />
+
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/noInternetTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/red"
+                    android:padding="2dp"
+                    android:text="No internet connection"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+
+
+
+
+
     </RelativeLayout>
 </layout>

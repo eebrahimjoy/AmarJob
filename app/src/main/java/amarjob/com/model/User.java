@@ -10,12 +10,28 @@ public class User {
     private String address;
     private String gender;
     private String birthday;
+    private double latitude;
+    private double longitude;
+    private String nationalID;
+    private String skillType;
+
 
     public User() {
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
 
-    public User(String id, String name, String profileImage, String mobileNumber, String email, String address, String gender, String birthday) {
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public String getNationalID() {
+        return nationalID;
+    }
+
+    public User(String id, String name, String profileImage, String mobileNumber, String email, String address, String gender, String birthday, double latitude, double longitude, String nationalID, String skillType) {
         this.id = id;
         this.name = name;
         this.profileImage = profileImage;
@@ -24,6 +40,10 @@ public class User {
         this.address = address;
         this.gender = gender;
         this.birthday = birthday;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.nationalID = nationalID;
+        this.skillType = skillType;
     }
 
     public String getId() {
@@ -56,5 +76,9 @@ public class User {
 
     public String getBirthday() {
         return birthday;
+    }
+
+    public String getSkillType() {
+        return skillType;
     }
 }
