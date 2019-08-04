@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimary">#4FB152</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#000000</color>
 
@@ -11,7 +11,7 @@
     <color name="grayWhite">#F1F1F1</color>
     <color name="gray">#7e7d7d</color>
     <color name="gray__heavy_light">#d6d5d5</color>
-    <color name="green">#51C655</color>
+    <color name="green">#4FB152</color>
 
     <color name="map_color">#DDE3E3</color>
     <color name="icon_color">#5F7D8C</color>

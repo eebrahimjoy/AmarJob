@@ -1,6 +1,7 @@
 package amarjob.com.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -165,6 +166,11 @@ public class LaunchActivity extends AppCompatActivity {
     private void launchHomeScreen() {
 
         prefManager.setFirstTimeLaunch(false);
+
+        startActivity(new Intent(LaunchActivity.this,SearchJobActivity.class));
+
+
+
       /*  if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
             startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
             overridePendingTransition(R.anim.stay, R.anim.stay);
