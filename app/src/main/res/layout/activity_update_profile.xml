@@ -10,7 +10,8 @@
         android:background="@color/white"
         tools:context=".view.activity.UpdateProfileActivity">
 
-        <androidx.appcompat.widget.Toolbar
+        <LinearLayout
+            android:orientation="vertical"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -36,7 +37,7 @@
 
             </LinearLayout>
 
-        </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/regTextLV"
@@ -373,6 +374,7 @@
                                         android:orientation="horizontal">
 
                                         <RadioButton
+                                            android:maxLines="1"
                                             android:id="@+id/functionalCatIV"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -385,6 +387,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginLeft="@dimen/margin_medium"
+                                            android:maxLines="1"
                                             android:text="Special Skilled Category"
                                             android:textSize="@dimen/text_size_medium" />
                                     </RadioGroup>
