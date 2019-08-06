@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.ProfileActivity">
+
+        <ScrollView
+            android:id="@+id/scrollSV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/rootLayoutLV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/profileContainerLV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/backBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:onClick="backBtn"
+                        android:paddingTop="@dimen/toolbar_padding_top"
+                        android:paddingRight="@dimen/toolbar_padding_right"
+                        android:paddingBottom="@dimen/toolbar_padding_bottom"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileImageIV"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/person_white_image"
+                        android:layout_gravity="center"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/image_border" />
+
+                    <TextView
+                        android:id="@+id/nameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Md. Ebrahim Joy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/poneTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="+8801515214189"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/personalInfoContainerLV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Information"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/personalInfoTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_person_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Personal Details"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/contactInfoTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_contacts_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Contact Details"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/careerInfoTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_career_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Career and Application Information"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/areaInfoTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Preferred Areas"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/otherInfoTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_info_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Other Relevant Information"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_large" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/educationInfoContainerLV"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Education / Training"
+                        android:textSize="@dimen/text_size_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/academicInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_view_day_black_24dp"
+                            android:padding="10dp"
+                            android:text="Academic Qualification"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/trainingInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_weekend_black_24dp"
+                            android:padding="10dp"
+                            android:text="Training Summery"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/certificateInfoTV"
+                            android:drawableLeft="@drawable/ic_local_grocery_store_black_24dp"
+                            android:drawablePadding="15dp"
+                            android:padding="10dp"
+                            android:text="Certificate Summery"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/employmentInfoContainerLV"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Employment History"
+                        android:textSize="@dimen/text_size_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/generalEmploymentInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_history_black_24dp"
+                            android:padding="10dp"
+                            android:text="Employment History"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/armyEmploymentInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_history_black_24dp"
+                            android:padding="10dp"
+                            android:text="Employment History (Retired Army)"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/OtherInfoContainerLV"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Other Information"
+                        android:textSize="@dimen/text_size_large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/specializationtInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_widgets_black_24dp"
+                            android:padding="10dp"
+                            android:text="Specialization"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/languageInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_language_black_24dp"
+                            android:padding="10dp"
+                            android:text="Language Proficiency"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/referenceInfoTV"
+                            android:drawablePadding="15dp"
+                            android:drawableLeft="@drawable/ic_perm_contact_calendar_black_24dp"
+                            android:padding="10dp"
+                            android:text="Reference"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+</layout>

@@ -160,8 +160,8 @@ public class SignInActivity extends AppCompatActivity {
                     String token_id = FirebaseInstanceId.getInstance().getToken();
                     searchJobViewModel.updateToken(token_id);
 
-                   /* startActivity(new Intent(LoginActivity.this, HomeActivity.class).
-                            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));*/
+                    startActivity(new Intent(SignInActivity.this, HomeActivity.class).
+                            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                 }
             }
         });

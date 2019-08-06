@@ -18,7 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.HomeActivity"
+        <activity android:name=".view.activity.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc"/>
+        <activity
+            android:name=".view.activity.HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAc"/>
         <activity
             android:name=".view.activity.PickLocationMapActivity"
@@ -36,7 +41,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_api_key" />
-
         <meta-data
             android:name="com.facebook.accountkit.ApplicationName"
             android:value="@string/app_name" />
@@ -55,11 +59,15 @@
         <activity
             android:name=".view.activity.SignInActivity"
             android:label="@string/title_activity_sign_in"
+            android:screenOrientation="portrait"
             android:theme="@style/NoActionBarAc" />
         <activity
             android:name=".view.activity.SearchJobActivity"
-            android:theme="@style/NoActionBarAc" />
-        <activity android:name=".view.activity.MainActivity" />
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc"/>
+        <activity android:name=".view.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc"/>
         <activity
             android:name=".view.activity.LaunchActivity"
             android:screenOrientation="portrait"

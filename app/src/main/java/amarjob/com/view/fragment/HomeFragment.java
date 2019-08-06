@@ -1,6 +1,7 @@
 package amarjob.com.view.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
@@ -20,13 +22,18 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import amarjob.com.Interface.OnMenuItemClickedListener;
 import amarjob.com.R;
 import amarjob.com.databinding.FragmentHomeBinding;
+import amarjob.com.model.Job;
 import amarjob.com.model.User;
 import amarjob.com.otherClasses.SharedPref;
+import amarjob.com.view.activity.ProfileActivity;
+import amarjob.com.view.adapter.FilterJobAdapter;
 import amarjob.com.viewmodel.HomeViewModel;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -41,6 +48,8 @@ public class HomeFragment extends Fragment {
     private BottomNavigationView bottomNavigationView;
     private HomeViewModel homeViewModel;
     private String profileImageUrl;
+    private FilterJobAdapter filterJobAdapter;
+    private List<Job> jobList;
 
     public HomeFragment() {
 
@@ -66,10 +75,17 @@ public class HomeFragment extends Fragment {
                 refreshItem();
             }
         });
+        binding.profileL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProfileActivity.class));
+            }
+        });
 
         init();
         initViewModel();
         setProfileInfo();
+        initRecyclerView();
         return view;
 
 
@@ -80,6 +96,7 @@ public class HomeFragment extends Fragment {
 
     }
     private void init() {
+        jobList = new ArrayList<>();
         sharedPreferences = getActivity().getSharedPreferences(SharedPref.SHARED_PREFERENCE_NAME, MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
@@ -103,6 +120,22 @@ public class HomeFragment extends Fragment {
                 onItemLoadComplete();
             }
         });
+    }
+    private void initRecyclerView() {
+
+        //dummy
+
+        Job job = new Job("1","Full Time","07/08/2019","10.08 AM","Android Developer","19");
+        Job job1 = new Job("2","Part Time","01/08/2019","01.30 PM","Software Developer","15");
+        Job job2 = new Job("3","Contractual","02/08/2019","12.00 AM","Web Developer","43");
+        jobList.add(job);
+        jobList.add(job1);
+        jobList.add(job2);
+
+        //
+        binding.jobFilterRV.setLayoutManager(new LinearLayoutManager(getActivity()));
+        filterJobAdapter = new FilterJobAdapter(jobList,getActivity());
+        binding.jobFilterRV.setAdapter(filterJobAdapter);
     }
     private void onItemLoadComplete() {
         binding.swipeRefreshLayout.setRefreshing(false);
