@@ -52,18 +52,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="5dp"
+                        android:layout_marginTop="10dp"
                         android:text="Md. Ebrahim Joy"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_large"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:layout_marginBottom="10dp"
                         android:id="@+id/poneTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:padding="5dp"
                         android:text="+8801515214189"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_medium"
@@ -76,7 +76,7 @@
                     android:id="@+id/personalInfoContainerLV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -153,7 +153,7 @@
 
                 <LinearLayout
                     android:id="@+id/educationInfoContainerLV"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:padding="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -208,7 +208,7 @@
 
                 <LinearLayout
                     android:id="@+id/employmentInfoContainerLV"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:padding="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -254,7 +254,7 @@
 
                 <LinearLayout
                     android:id="@+id/OtherInfoContainerLV"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:padding="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
