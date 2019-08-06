@@ -43,7 +43,7 @@ public class FilterJobAdapter extends RecyclerView.Adapter<FilterJobAdapter.View
         viewModel.binding.jobAvailableTV.setText(job.getAvailableJobAmount());
         viewModel.binding.dateTV.setText(job.getDate());
         viewModel.binding.jobTypeTV.setText(job.getType());
-        viewModel.binding.titleTV.setText(job.getType());
+        viewModel.binding.titleTV.setText(job.getTitle());
 
 
         viewModel.itemView.setOnClickListener(new View.OnClickListener() {

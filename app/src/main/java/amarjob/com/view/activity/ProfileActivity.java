@@ -3,6 +3,7 @@ package amarjob.com.view.activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -15,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions;
 import amarjob.com.R;
 import amarjob.com.databinding.ActivityProfileBinding;
 import amarjob.com.model.User;
+import amarjob.com.view.fragment.ImageZoomingDialog;
 import amarjob.com.viewmodel.HomeViewModel;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -31,6 +33,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+        binding.profileImageIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (profileImageUrl != null && !profileImageUrl.equals("")) {
+                    openImageZoomingDialog(profileImageUrl);
+                }
             }
         });
 
@@ -56,5 +66,13 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void openImageZoomingDialog(String imageUrl) {
+        Bundle bundle = new Bundle();
+        bundle.putString("imageUrl", imageUrl);
+        ImageZoomingDialog dialog = new ImageZoomingDialog();
+        dialog.setArguments(bundle);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        dialog.show(ft, "TAG");
     }
 }

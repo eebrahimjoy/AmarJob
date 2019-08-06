@@ -127,10 +127,8 @@ public class HomeFragment extends Fragment {
 
         Job job = new Job("1","Full Time","07/08/2019","10.08 AM","Android Developer","19");
         Job job1 = new Job("2","Part Time","01/08/2019","01.30 PM","Software Developer","15");
-        Job job2 = new Job("3","Contractual","02/08/2019","12.00 AM","Web Developer","43");
         jobList.add(job);
         jobList.add(job1);
-        jobList.add(job2);
 
         //
         binding.jobFilterRV.setLayoutManager(new LinearLayoutManager(getActivity()));
