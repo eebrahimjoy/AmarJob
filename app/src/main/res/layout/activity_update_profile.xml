@@ -10,13 +10,12 @@
         android:background="@color/white"
         tools:context=".view.activity.UpdateProfileActivity">
 
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
             android:orientation="vertical"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            android:elevation="5dp">
+            android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,54 +28,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:paddingTop="10dp"
                     android:paddingRight="10dp"
-                    android:paddingBottom="10dp"
                     android:src="@drawable/ic_arrow_back_black_24dp" />
-
 
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
-        <LinearLayout
-            android:id="@+id/regTextLV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/regTextTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Registration"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/margin_large_extra" />
-
-        </LinearLayout>
-
-
-            <RelativeLayout
-                android:layout_below="@+id/regTextLV"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
                 <RelativeLayout
+                    android:layout_below="@id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp">
-
+                    android:layout_height="wrap_content">
 
                     <ScrollView
+                        android:padding="10dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true">
+                        android:layout_height="wrap_content">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/regTextTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Registration"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/margin_large_extra" />
+
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/imageCard"
                                 android:layout_width="wrap_content"
@@ -437,14 +418,6 @@
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:visibility="gone" />
-
-            </RelativeLayout>
-
-
-
-
-
-
 
     </RelativeLayout>
 </layout>

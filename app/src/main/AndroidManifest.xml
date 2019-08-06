@@ -18,13 +18,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.ProfileActivity"
+        <activity android:name=".view.activity.PersonalDetailsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAc"/>
+            android:theme="@style/NoActionBarAc" />
+        <activity
+            android:name=".view.activity.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarAc" />
         <activity
             android:name=".view.activity.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAc"/>
+            android:theme="@style/NoActionBarAc" />
         <activity
             android:name=".view.activity.PickLocationMapActivity"
             android:screenOrientation="portrait"
@@ -64,10 +68,11 @@
         <activity
             android:name=".view.activity.SearchJobActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAc"/>
-        <activity android:name=".view.activity.MainActivity"
+            android:theme="@style/NoActionBarAc" />
+        <activity
+            android:name=".view.activity.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBarAc"/>
+            android:theme="@style/NoActionBarAc" />
         <activity
             android:name=".view.activity.LaunchActivity"
             android:screenOrientation="portrait"

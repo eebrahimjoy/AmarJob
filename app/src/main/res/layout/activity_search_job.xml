@@ -10,24 +10,43 @@
         android:background="@color/white"
         tools:context=".view.activity.SearchJobActivity">
 
-                <LinearLayout
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:orientation="horizontal">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/userProfileImageID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:src="@drawable/person_icon" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="backBtn"
+            android:paddingTop="@dimen/toolbar_padding_top"
+            android:paddingRight="@dimen/toolbar_padding_right"
+            android:paddingBottom="@dimen/toolbar_padding_bottom"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileImageID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/person_icon" />
 
 
-                </LinearLayout>
-
-
+        </LinearLayout>
 
 
         <RelativeLayout
@@ -35,75 +54,70 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
                     <TextView
-                        android:padding="10dp"
-                        android:textColor="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/margin_large_extra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Search Job"/>
+                        android:padding="10dp"
+                        android:text="Search Job"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/margin_large_extra"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
 
                 <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                    android:layout_marginTop="@dimen/margin_large_extra"
                     android:id="@+id/jobTitleSP"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra" />
 
                 <View
-                    android:background="@color/gray"
                     android:layout_width="match_parent"
-                    android:layout_height="1.3dp"/>
-
+                    android:layout_height="1.3dp"
+                    android:background="@color/gray" />
 
 
                 <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                    android:layout_marginTop="@dimen/margin_large_extra"
                     android:id="@+id/districtSP"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra" />
 
                 <View
-                    android:background="@color/gray"
                     android:layout_width="match_parent"
-                    android:layout_height="1.3dp">
+                    android:layout_height="1.3dp"
+                    android:background="@color/gray">
 
                 </View>
-
 
 
                 <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                    android:layout_marginTop="@dimen/margin_large_extra"
                     android:id="@+id/jobCatSP"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_large_extra" />
 
                 <View
-                    android:background="@color/gray"
                     android:layout_width="match_parent"
-                    android:layout_height="1.3dp">
+                    android:layout_height="1.3dp"
+                    android:background="@color/gray">
 
                 </View>
-
-
-
 
 
                 <Button
-                    android:textAlignment="center"
                     android:id="@+id/searchJobBtn"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
@@ -112,6 +126,7 @@
                     android:background="@drawable/button_background"
                     android:maxLines="1"
                     android:text="Search"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_medium" />
