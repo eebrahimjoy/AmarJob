@@ -27,7 +27,9 @@ import amarjob.com.databinding.ActivityHomeBinding;
 import amarjob.com.otherClasses.ConnectivityHelper;
 import amarjob.com.otherClasses.CustomVisibility;
 import amarjob.com.otherClasses.SharedPref;
+import amarjob.com.view.fragment.AmarJobFragment;
 import amarjob.com.view.fragment.HomeFragment;
+import amarjob.com.view.fragment.HotJobFragment;
 import amarjob.com.view.fragment.MoreFragment;
 import amarjob.com.view.receiver.NetworkChangeReceiver;
 
@@ -92,13 +94,13 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClicked
                 case R.id.navigation_hotJobs:
                     if (currentPage!=1){
                         currentPage = 1;
-                        /*replaceFragment(new HomeFragment());*/
+                        replaceFragment(new HotJobFragment());
                     }
                     return true;
                 case R.id.navigation_amarjob:
                     if (currentPage!=2){
                         currentPage = 2;
-                        /*replaceFragment(new HomeFragment());*/
+                        replaceFragment(new AmarJobFragment());
                     }
                     return true;
                 case R.id.navigation_more:
