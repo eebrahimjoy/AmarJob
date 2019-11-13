@@ -51,11 +51,6 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            showDialogForLocation();
-        } else {
             currentStatus = true;
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 startNextActivity();
@@ -69,12 +64,12 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
 
-        }
+
     }
 
     private void launchHomeScreen() {
         binding.reveal.setVisibility(View.INVISIBLE);
-        startActivity(new Intent(SplashActivity.this, SearchJobActivity.class));
+        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         finish();
     }
 
@@ -124,11 +119,11 @@ public class SplashActivity extends AppCompatActivity {
 
         if (currentStatus == true) {
             if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
-                startActivity(new Intent(SplashActivity.this, SearchJobActivity.class));
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 finish();
                 overridePendingTransition(R.anim.stay, R.anim.stay);
             } else if (sharedPreferences.getBoolean(SharedPref.IS_UPDATED, false) == false) {
-                startActivity(new Intent(SplashActivity.this, UpdateProfileActivity.class).putExtra("isFirstTime",true));
+                startActivity(new Intent(SplashActivity.this, HomeActivity.class).putExtra("isFirstTime",true));
                 finish();
                 overridePendingTransition(R.anim.stay, R.anim.stay);
             } else {

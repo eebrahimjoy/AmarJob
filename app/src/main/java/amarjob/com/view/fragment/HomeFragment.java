@@ -16,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -78,13 +79,13 @@ public class HomeFragment extends Fragment {
         binding.profileL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ProfileActivity.class));
+                Toast.makeText(getActivity(), "Under Development", Toast.LENGTH_SHORT).show();
             }
         });
 
         init();
         initViewModel();
-        setProfileInfo();
+        //setProfileInfo();
         initRecyclerView();
         return view;
 
@@ -125,8 +126,8 @@ public class HomeFragment extends Fragment {
 
         //dummy
 
-        Job job = new Job("1","Full Time","07/08/2019","10.08 AM","Android Developer","19");
-        Job job1 = new Job("2","Part Time","01/08/2019","01.30 PM","Software Developer","15");
+        Job job = new Job("1","dummy","07/11/2019","10.08 AM","Rice","01");
+        Job job1 = new Job("2","dummy","01/11/2019","01.30 PM","Egg","02");
         jobList.add(job);
         jobList.add(job1);
 

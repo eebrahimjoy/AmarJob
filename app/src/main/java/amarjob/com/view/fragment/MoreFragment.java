@@ -22,6 +22,7 @@ import amarjob.com.R;
 import amarjob.com.databinding.FragmentMoreBinding;
 import amarjob.com.otherClasses.CustomProgressDialog;
 import amarjob.com.otherClasses.SharedPref;
+import amarjob.com.view.activity.LoginActivity;
 import amarjob.com.view.activity.SplashActivity;
 import amarjob.com.viewmodel.SearchJobViewModel;
 
@@ -98,7 +99,7 @@ public class MoreFragment extends Fragment {
                             if (progressDialog.isShowing()) {
                                 progressDialog.dismiss();
                             }
-                            startActivity(new Intent(getActivity(), SplashActivity.class).
+                            startActivity(new Intent(getActivity(), LoginActivity.class).
                                     addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
                             getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                             editor.remove(SharedPref.USER_ID);

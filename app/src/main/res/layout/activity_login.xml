@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rootLayoutId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.activity.LoginActivity">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:id="@+id/informationLayout">
+
+            <ImageView
+                android:src="@drawable/ic_team"
+                android:id="@+id/logoIV"
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="100dp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_large"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentBottom="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/agreeLayout"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/termsAndConditionID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/loginBtn"
+                    android:textSize="@dimen/text_size_small"
+                    android:buttonTint="@color/black"
+                    android:text="I accept the"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minLines="2"
+                    android:paddingBottom="5dp"
+                    android:maxLines="2"
+                    android:paddingTop="10dp"
+                    android:textSize="@dimen/text_size_small"
+                    android:id="@+id/termAndConditionTV"
+                    android:textColor="@color/black"
+                    android:text="Terms and conditions of modernDokandar"/>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_below="@+id/agreeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_enable_login"
+                android:onClick="gotoFacebookAccountKit"
+                android:text="Login/Register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

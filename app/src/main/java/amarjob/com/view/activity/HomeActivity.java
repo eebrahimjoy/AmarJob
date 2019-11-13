@@ -91,12 +91,6 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClicked
                         replaceFragment(new HomeFragment(HomeActivity.this,binding.navigation));
                     }
                     return true;
-                case R.id.navigation_hotJobs:
-                    if (currentPage!=1){
-                        currentPage = 1;
-                        replaceFragment(new HotJobFragment());
-                    }
-                    return true;
                 case R.id.navigation_amarjob:
                     if (currentPage!=2){
                         currentPage = 2;

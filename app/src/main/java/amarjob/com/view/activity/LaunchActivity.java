@@ -166,7 +166,7 @@ public class LaunchActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
         if (sharedPreferences.getString(SharedPref.USER_ID, "").equals("")) {
-            startActivity(new Intent(LaunchActivity.this, SearchJobActivity.class));
+            startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
             overridePendingTransition(R.anim.stay, R.anim.stay);
             finish();
         }

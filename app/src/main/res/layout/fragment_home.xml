@@ -24,7 +24,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="AmarJob"
+                    android:text="ModerDokandar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -133,7 +133,7 @@
                                     android:layout_marginBottom="5dp"
                                     android:maxLines="2"
                                     android:textStyle="bold"
-                                    android:text="User Name"
+                                    android:text="Ebrahim Joy"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                     android:textColor="@color/black"
                                     android:textSize="@dimen/text_size_medium" />
@@ -144,7 +144,7 @@
                                     android:layout_height="wrap_content"
                                     android:drawableTint="@color/black"
                                     android:gravity="center"
-                                    android:text="Phone Number"
+                                    android:text="+8801515214189"
                                     android:textColor="@color/black"
                                     android:textSize="@dimen/text_size_small" />
 

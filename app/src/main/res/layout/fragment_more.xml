@@ -26,7 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="More"
+                    android:text="Settings"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/text_size_large"
                     android:textStyle="bold" />
@@ -222,7 +222,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
-                        android:text="Build version AmarJob 1.0"
+                        android:text="Build version modernDokandar 1.0"
                         android:textColor="@color/light_gray"
                         android:textSize="10sp" />
 
@@ -230,7 +230,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2019 AmarJob"
+                        android:text="2019 modernDokandar"
                         android:textColor="@color/light_gray"
                         android:textSize="10sp" />
 
